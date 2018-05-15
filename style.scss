@@ -121,10 +121,10 @@ p {
   display: flex;
   justify-content: space-between;
   .headphones {
-    width: 30%;
+    width: 50%;
     height: 125%;
     transform: translate(0%, -30%);
-    @include bg-image('./images/beats-v1.png', cover);
+    @include bg-image('./images/beats-v1.png', contain);
   }
 
   .content {
@@ -180,7 +180,7 @@ p {
   color: white;
 }
 .headphones-two {
-  width: 30%;
+  width: 50%;
   height: 100%;
 
   z-index: 2;
@@ -188,7 +188,7 @@ p {
   top: -10em;
   transform: skewY(-4deg);
 
-  @include bg-image('./images/beats-v2.png', cover);
+  @include bg-image('./images/beats-v2.png', contain);
 }
 
 // ======================================
