@@ -1,0 +1,569 @@
+// =============
+// RESET
+// -------------
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+html {
+  width: 100vw;
+}
+body {
+  // background-color: rgb(206, 59, 51);
+  background-color: #C02828;
+  font-family: 'Montserrat', sans-serif;
+}
+@mixin bg-image($url, $size) {
+  background-image: url($url);
+  background-size: $size;
+  background-repeat: no-repeat;
+}
+p {
+  font-size: 0.9em;
+}
+
+// =======================
+// FONT IMPORTS
+// -----------------------
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:400,600,700');
+
+// =============
+// NAVBAR
+// -------------
+.navbar {
+  width: 90%;
+  height: 7vh;
+
+  top: 0;
+  left: 5%;
+  display: flex;
+  z-index: 10;
+  position: absolute;
+  align-items: center;
+  justify-content: space-around;
+  a {
+    color: white;
+    font-size: 0.8em;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+  }
+}
+.logo-container {
+  flex: 0.7;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+  @include bg-image('./images/beats-white-logo.png', cover);
+}
+.search {
+  color: white;
+}
+.icon {
+  width: 40px;
+  height: 30px;
+  @include bg-image('./images/menu-icon.png', cover);
+  
+  bottom: 5px;
+  position: relative;
+}
+// ======================================
+// HERO
+// --------------------------------------
+.hero {
+  width: 90%;
+  height: 90vh;
+  margin: 0 auto;
+  
+  // box-shadow: -1px 0px 25px -7px rgba(0, 0, 0, 0.9);
+  background-image: linear-gradient(rgba(107, 12, 9, 0.6), 
+  rgba(175, 54, 48, 0.80)),
+  url('./images/travis.jpg');
+  
+  background-size: 100% 150%;
+  background-repeat: no-repeat;
+  background-position: 50% 60%;
+  filter: contrast(145%);
+}
+// ========================================
+// FIRST SECTION
+// ----------------------------------------
+.section-one {
+  width: 90%;
+  height: 60vh;
+  margin: 0 auto;
+
+  // box-shadow: -1px 0px 25px -5px rgba(0, 0, 0, 0.9);
+  // background-color: rgb(206, 59, 51);
+  background-color: #DD2828;
+
+  display: flex;
+  justify-content: space-between;
+  .headphones {
+    width: 50%;
+    height: 125%;
+    transform: translate(0%, -30%);
+    @include bg-image('./images/beats-v1.png', cover);
+  }
+
+  .content {
+    color: white;
+    width: 40%;
+  }
+}
+.content h1 {
+  font-size: 4em;
+  font-weight: bold;
+  transform: translate(0%, -1.2em);
+  color: white;
+}
+#solo {
+  color: lighten(#DD2828, 15%); 
+}
+.content p {
+  color: white;
+}
+// ======================================
+// SECOND SECTION
+// --------------------------------------
+.section-two {
+  width: 90%;
+  height: 75vh;
+  margin: 0 auto;
+  background-color: #DD2828;
+}
+.section-two-container {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-image: linear-gradient(rgba(107, 12, 9, 0.8), rgba(107, 12, 39, 0.8)),
+  url('./images/couch-beats.jpg');
+  transform: skewY(4deg);
+}
+.sect-two-content,
+.headphones-two {
+  transform: skewY(-4deg);
+}
+.sect-two-content h1 {
+  color: white;
+  font-size: 3.8em;
+  font-weight: bold;
+}
+.sect-two-content span {
+  color: lighten(#DD2828, 15%);
+}
+.sect-two-content p {
+  color: white;
+}
+.headphones-two {
+  width: 40%;
+  height: 100%;
+
+  z-index: 2;
+  position: relative;
+  top: -10em;
+  transform: skewY(-4deg);
+
+  @include bg-image('./images/beats-v2.png', cover);
+}
+
+// ======================================
+//  THIRD SECTION
+// --------------------------------------
+.section-three {
+  width: 90%;
+  height: 50vh;
+  margin: 0 auto;
+  background-color: #DD2828;
+  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.headphones-three {
+  // background: green;
+  width: 45%;
+  height: 140%;
+  transform: translate(-10%, -25%);
+  @include bg-image('./images/beats-v3.png', cover);
+}
+.sect-three-content h1 {
+  color: white;
+  font-size: 3.8em;
+  font-weight: bold;
+}
+.sect-three-content span {
+  color: lighten(#DD2828, 15%);
+}
+.sect-three-content p {
+  color: white;
+}
+
+// ======================================
+//  FOURTH SECTION
+// --------------------------------------
+.section-four {
+  width: 90%;
+  height: 75vh;
+  margin: 0 auto;
+  background-color: #DD2828;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video {
+  width: 90%;
+  height: 90%;
+  box-shadow: 5px 5px 25px -3px rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  flex-direction: column;
+}
+.video-content-one {
+  width: 100%;
+  height: 92%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h1 {
+    color: white;
+    font-size: 3.8em;
+    font-weight: bold;
+    padding-top: 15px;
+  }
+  span {
+    color: black;
+  }
+  .empty, h1, i {
+    width: 33%;
+  }
+}
+.video-content-two {
+  width: 100%;
+  height: 7%;
+
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: flex-end;  
+  .youtube {
+    width: 60px;
+    height: 100%;
+    @include bg-image('./images/youtube-logo.png', cover);
+  }
+}
+
+// ======================================
+//  FIFTH SECTION
+// --------------------------------------
+.section-five {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 5%;
+  height: 80vh;
+  background-color: #DD2828;
+
+  display: flex;
+  justify-content: center;
+}
+.column-one {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  h2 {
+    color: white;
+    font-size: 2.6em;
+    font-weight: bold;
+    span {
+      color: lighten(#DD2828, 15%);
+    } 
+  }
+  h4 {
+    color: white;
+    padding-top: 2%;
+  }
+}
+.color-selection {
+  width: 80%;
+  height: 60%;
+
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2%;
+  .select {
+    color: white;
+    width: 40%;
+
+    display: flex;
+    align-items: center;
+    i {
+      border: 1px solid white;
+    }
+    h3 {
+      margin-left: 12px;
+    }
+  }
+}
+#circle1 { color: black; }
+#circle2 { color: white; }
+#circle3 { color: rosybrown; }
+#circle4 { color: black; }
+#circle5 { color: goldenrod; }
+#circle6 { color: silver; }
+#circle7 { color: plum; }
+#circle8 { color: red; }
+.column-two {
+  width: 40%;
+  height: 90%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.headphones-black {
+  width: 110%;
+  height: 100%;
+  display: flex;
+  @include bg-image('./images/beats-v4.png', cover);
+}
+.circle-icons {
+  width: 100%;
+  color: white;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  .c-icons {
+    padding: 5px;
+  }
+}
+// ======================================
+//  SIXTH SECTION
+// --------------------------------------
+.section-six {
+  width: 90%;
+  height: 80vh;
+  margin: 0 auto;
+  padding-top: 1%;
+  background-color: #DD2828;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.sect-six-col-1 {
+  width: 60%;
+  height: 100%;
+  @include bg-image('./images/beats-v5.png', cover);
+}
+
+.sect-six-col-2 {
+  width: 40%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  h1 {
+    color: white;
+    font-size: 3.8em;
+    font-weight: bold;
+    span {
+      color: lighten(#DD2828, 15%);
+    }
+  }
+}
+.details {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.items {
+  width: 100%;
+  display: flex;
+  .id {
+    font-weight: bold;
+  }
+  .item {
+    width: 100%;
+    color: white;
+    font-weight: 300;
+    padding-left: 5%;
+  } 
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  button {
+    padding: 8px 20px;
+    border-radius: 18px;
+  }
+  #btn-a {
+    color: white;
+    border: none;
+    background-color: black;
+  }
+  #btn-b {
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    margin-left: 8%;
+    background-color: red;
+  }
+}
+
+// ======================================
+//  SEVENTH SECTION
+// --------------------------------------
+.sect-seven-container {
+  width: 90%;
+  height: 70vh;
+  margin: 0 auto;
+  background-color: #DD2828;
+
+}
+.section-seven {
+  width: 100%;
+  height: 90%;
+  transform: skewY(4deg);
+  background-image: linear-gradient(rgba(107, 12, 9, 0.8), rgba(107, 12, 39, 0.8)),
+  url('./images/phone-beats.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 25%;
+}
+// ======================================
+//  EIGHTH SECTION
+// --------------------------------------
+.section-eight {
+  width: 90%;
+  height: 80vh;
+  margin: 0 auto;
+  background-color: #dd2828;
+
+  display: flex;
+  justify-content: space-around;
+}
+.overview-col-1 {
+  width: 42%;
+  height: 80%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  h1 {
+    color: white;
+    font-size: 3.2em;
+    font-weight: bold;
+    span {
+      color: lighten(#DD2828, 15%);
+    }
+  }
+  p {
+    color: white;
+  }
+}
+.overview-details {
+  width: 100%;
+  height: 40%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  h2,h3 {
+    color: white;
+  }
+  h2 {
+    padding: 50px 8px 8px 8px;
+  }
+  span {
+    font-size: 0.6em;
+    padding: 0px 8px;
+  }
+}
+.text-overview {
+  height: 30%;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  span {
+    color: lighten(#DD2828, 15%);
+    font-size: 1.5em;
+    padding-right: 60px;
+  }
+}
+#highlights {
+  border-bottom: 1px solid lightgray;
+}
+#specs {
+  border-bottom: 2px solid white;
+}
+.img-col-2 {
+  width: 50%;
+  height: 90%;
+  @include bg-image('./images/beats-v1.png', cover);
+
+  transform: translate(0%, -26%);
+}
+
+// ================
+//  MEDIA QUERIES 
+// ----------------
+@media (min-width: 6.25em ) {
+  .beats-overlay {
+    width: 100%;
+    height: 100%;
+
+    z-index: 15;
+    position: fixed;
+    text-align: center;
+    background: black;
+    padding-left: 40px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    .red-logo {
+      width: 35%;
+      height: 10%;
+      @include bg-image('./images/beats-red-logo.png', cover);
+      padding-bottom: 30px;
+    }
+    h4 {
+      color: white;
+    }
+  }
+}
+@media (min-width: 62.5em) {
+  .beats-overlay {
+    display: none;
+  }
+}

@@ -1,0 +1,482 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:400,600,700");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+html {
+  width: 100vw; }
+
+body {
+  background-color: #C02828;
+  font-family: 'Montserrat', sans-serif; }
+
+p {
+  font-size: 0.9em; }
+
+.navbar {
+  width: 90%;
+  height: 7vh;
+  top: 0;
+  left: 5%;
+  display: flex;
+  z-index: 10;
+  position: absolute;
+  align-items: center;
+  justify-content: space-around; }
+  .navbar a {
+    color: white;
+    font-size: 0.8em;
+    letter-spacing: 0.06em;
+    text-decoration: none; }
+
+.logo-container {
+  flex: 0.7; }
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background-image: url("./images/beats-white-logo.png");
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.search {
+  color: white; }
+
+.icon {
+  width: 40px;
+  height: 30px;
+  background-image: url("./images/menu-icon.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  bottom: 5px;
+  position: relative; }
+
+.hero {
+  width: 90%;
+  height: 90vh;
+  margin: 0 auto;
+  background-image: linear-gradient(rgba(107, 12, 9, 0.6), rgba(175, 54, 48, 0.8)), url("./images/travis.jpg");
+  background-size: 100% 150%;
+  background-repeat: no-repeat;
+  background-position: 50% 60%;
+  filter: contrast(145%); }
+
+.section-one {
+  width: 90%;
+  height: 60vh;
+  margin: 0 auto;
+  background-color: #DD2828;
+  display: flex;
+  justify-content: space-between; }
+  .section-one .headphones {
+    width: 50%;
+    height: 125%;
+    transform: translate(0%, -30%);
+    background-image: url("./images/beats-v1.png");
+    background-size: cover;
+    background-repeat: no-repeat; }
+  .section-one .content {
+    color: white;
+    width: 40%; }
+
+.content h1 {
+  font-size: 4em;
+  font-weight: bold;
+  transform: translate(0%, -1.2em);
+  color: white; }
+
+#solo {
+  color: #e76a6a; }
+
+.content p {
+  color: white; }
+
+.section-two {
+  width: 90%;
+  height: 75vh;
+  margin: 0 auto;
+  background-color: #DD2828; }
+
+.section-two-container {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-image: linear-gradient(rgba(107, 12, 9, 0.8), rgba(107, 12, 39, 0.8)), url("./images/couch-beats.jpg");
+  transform: skewY(4deg); }
+
+.sect-two-content,
+.headphones-two {
+  transform: skewY(-4deg); }
+
+.sect-two-content h1 {
+  color: white;
+  font-size: 3.8em;
+  font-weight: bold; }
+
+.sect-two-content span {
+  color: #e76a6a; }
+
+.sect-two-content p {
+  color: white; }
+
+.headphones-two {
+  width: 40%;
+  height: 100%;
+  z-index: 2;
+  position: relative;
+  top: -10em;
+  transform: skewY(-4deg);
+  background-image: url("./images/beats-v2.png");
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.section-three {
+  width: 90%;
+  height: 50vh;
+  margin: 0 auto;
+  background-color: #DD2828;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.headphones-three {
+  width: 45%;
+  height: 140%;
+  transform: translate(-10%, -25%);
+  background-image: url("./images/beats-v3.png");
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.sect-three-content h1 {
+  color: white;
+  font-size: 3.8em;
+  font-weight: bold; }
+
+.sect-three-content span {
+  color: #e76a6a; }
+
+.sect-three-content p {
+  color: white; }
+
+.section-four {
+  width: 90%;
+  height: 75vh;
+  margin: 0 auto;
+  background-color: #DD2828;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.video {
+  width: 90%;
+  height: 90%;
+  box-shadow: 5px 5px 25px -3px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column; }
+
+.video-content-one {
+  width: 100%;
+  height: 92%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .video-content-one h1 {
+    color: white;
+    font-size: 3.8em;
+    font-weight: bold;
+    padding-top: 15px; }
+  .video-content-one span {
+    color: black; }
+  .video-content-one .empty, .video-content-one h1, .video-content-one i {
+    width: 33%; }
+
+.video-content-two {
+  width: 100%;
+  height: 7%;
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: flex-end; }
+  .video-content-two .youtube {
+    width: 60px;
+    height: 100%;
+    background-image: url("./images/youtube-logo.png");
+    background-size: cover;
+    background-repeat: no-repeat; }
+
+.section-five {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 5%;
+  height: 80vh;
+  background-color: #DD2828;
+  display: flex;
+  justify-content: center; }
+
+.column-one {
+  width: 40%;
+  display: flex;
+  flex-direction: column; }
+  .column-one h2 {
+    color: white;
+    font-size: 2.6em;
+    font-weight: bold; }
+    .column-one h2 span {
+      color: #e76a6a; }
+  .column-one h4 {
+    color: white;
+    padding-top: 2%; }
+
+.color-selection {
+  width: 80%;
+  height: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2%; }
+  .color-selection .select {
+    color: white;
+    width: 40%;
+    display: flex;
+    align-items: center; }
+    .color-selection .select i {
+      border: 1px solid white; }
+    .color-selection .select h3 {
+      margin-left: 12px; }
+
+#circle1 {
+  color: black; }
+
+#circle2 {
+  color: white; }
+
+#circle3 {
+  color: rosybrown; }
+
+#circle4 {
+  color: black; }
+
+#circle5 {
+  color: goldenrod; }
+
+#circle6 {
+  color: silver; }
+
+#circle7 {
+  color: plum; }
+
+#circle8 {
+  color: red; }
+
+.column-two {
+  width: 40%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.headphones-black {
+  width: 110%;
+  height: 100%;
+  display: flex;
+  background-image: url("./images/beats-v4.png");
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.circle-icons {
+  width: 100%;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center; }
+  .circle-icons .c-icons {
+    padding: 5px; }
+
+.section-six {
+  width: 90%;
+  height: 80vh;
+  margin: 0 auto;
+  padding-top: 1%;
+  background-color: #DD2828;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.sect-six-col-1 {
+  width: 60%;
+  height: 100%;
+  background-image: url("./images/beats-v5.png");
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.sect-six-col-2 {
+  width: 40%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start; }
+  .sect-six-col-2 h1 {
+    color: white;
+    font-size: 3.8em;
+    font-weight: bold; }
+    .sect-six-col-2 h1 span {
+      color: #e76a6a; }
+
+.details {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+
+.items {
+  width: 100%;
+  display: flex; }
+  .items .id {
+    font-weight: bold; }
+  .items .item {
+    width: 100%;
+    color: white;
+    font-weight: 300;
+    padding-left: 5%; }
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; }
+  .buttons button {
+    padding: 8px 20px;
+    border-radius: 18px; }
+  .buttons #btn-a {
+    color: white;
+    border: none;
+    background-color: black; }
+  .buttons #btn-b {
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    margin-left: 8%;
+    background-color: red; }
+
+.sect-seven-container {
+  width: 90%;
+  height: 70vh;
+  margin: 0 auto;
+  background-color: #DD2828; }
+
+.section-seven {
+  width: 100%;
+  height: 90%;
+  transform: skewY(4deg);
+  background-image: linear-gradient(rgba(107, 12, 9, 0.8), rgba(107, 12, 39, 0.8)), url("./images/phone-beats.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 25%; }
+
+.section-eight {
+  width: 90%;
+  height: 80vh;
+  margin: 0 auto;
+  background-color: #dd2828;
+  display: flex;
+  justify-content: space-around; }
+
+.overview-col-1 {
+  width: 42%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start; }
+  .overview-col-1 h1 {
+    color: white;
+    font-size: 3.2em;
+    font-weight: bold; }
+    .overview-col-1 h1 span {
+      color: #e76a6a; }
+  .overview-col-1 p {
+    color: white; }
+
+.overview-details {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+  .overview-details h2, .overview-details h3 {
+    color: white; }
+  .overview-details h2 {
+    padding: 50px 8px 8px 8px; }
+  .overview-details span {
+    font-size: 0.6em;
+    padding: 0px 8px; }
+
+.text-overview {
+  height: 30%;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .text-overview span {
+    color: #e76a6a;
+    font-size: 1.5em;
+    padding-right: 60px; }
+
+#highlights {
+  border-bottom: 1px solid lightgray; }
+
+#specs {
+  border-bottom: 2px solid white; }
+
+.img-col-2 {
+  width: 50%;
+  height: 90%;
+  background-image: url("./images/beats-v1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: translate(0%, -26%); }
+
+@media (min-width: 6.25em) {
+  .beats-overlay {
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+    position: fixed;
+    text-align: center;
+    background: black;
+    padding-left: 40px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; }
+    .beats-overlay .red-logo {
+      width: 35%;
+      height: 10%;
+      background-image: url("./images/beats-red-logo.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding-bottom: 30px; }
+    .beats-overlay h4 {
+      color: white; } }
+@media (min-width: 62.5em) {
+  .beats-overlay {
+    display: none; } }
+
+/*# sourceMappingURL=style.css.map */
