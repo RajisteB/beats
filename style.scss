@@ -205,7 +205,6 @@ p {
   align-items: center;
 }
 .headphones-three {
-  // background: green;
   width: 35%;
   height: 140%;
   transform: translate(-10%, -25%);
@@ -378,9 +377,9 @@ p {
   
 }
 .sect-six-col-1 {
-  width: 45%;
+  width: 48%;
   height: 100%;
-  @include bg-image('./images/beats-v5.png', cover);
+  @include bg-image('./images/beats-v5.png', contain);
 }
 
 .sect-six-col-2 {
@@ -531,7 +530,7 @@ p {
 .img-col-2 {
   width: 40%;
   height: 90%;
-  @include bg-image('./images/beats-v1.png', cover);
+  @include bg-image('./images/beats-v1.png', contain);
 
   transform: translate(0%, -26%);
 }

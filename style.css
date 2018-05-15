@@ -324,10 +324,10 @@ p {
   justify-content: space-between; }
 
 .sect-six-col-1 {
-  width: 45%;
+  width: 48%;
   height: 100%;
   background-image: url("./images/beats-v5.png");
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat; }
 
 .sect-six-col-2 {
@@ -452,7 +452,7 @@ p {
   width: 40%;
   height: 90%;
   background-image: url("./images/beats-v1.png");
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   transform: translate(0%, -26%); }
 
