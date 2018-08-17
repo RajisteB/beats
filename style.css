@@ -28,7 +28,8 @@ body {
 
 html, body {
   box-sizing: border-box;
-  -webkit-box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+  height: 100%; }
 
 p {
   font-size: 0.9em; }
@@ -43,11 +44,78 @@ p {
   position: absolute;
   align-items: center;
   justify-content: space-around; }
+  .navbar .fa-search {
+    cursor: pointer; }
   .navbar a {
     color: white;
     font-size: 0.8em;
     letter-spacing: 0.06em;
     text-decoration: none; }
+    .navbar a:hover {
+      border-bottom: 2px solid #fff; }
+  .navbar input {
+    border: 0.5px solid white;
+    color: #fff;
+    background: #000;
+    border-radius: 10px;
+    margin: 0px 10px;
+    width: 0px;
+    opacity: 0;
+    padding: 4px;
+    cursor: none; }
+    .navbar input:focus {
+      outline: none; }
+    .navbar input::-webkit-input-placeholder {
+      font-style: italic;
+      font-size: 1rem; }
+
+.searchbar-open {
+  animation: revealsearch 1s forwards; }
+
+@keyframes revealsearch {
+  0% {
+    opacity: 0.5;
+    width: 0px; }
+  25% {
+    opacity: 0.6;
+    width: 100px; }
+  75% {
+    width: 120px;
+    opacity: 0.8; }
+  100% {
+    width: 190px;
+    opacity: 1; } }
+#side-bar {
+  position: fixed;
+  background-color: black;
+  border-left: 2px solid tomato;
+  height: 100%;
+  right: -250px;
+  z-index: 10; }
+  #side-bar h1 {
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 40px 10px 20px 200px; }
+  #side-bar ul {
+    margin-top: 100px; }
+    #side-bar ul li {
+      margin: 50px 0px;
+      padding: 20px;
+      list-style-type: none;
+      color: white; }
+      #side-bar ul li:hover {
+        background: darkred;
+        cursor: pointer; }
+    #side-bar ul .logo {
+      margin: 0 auto; }
+
+.sidebar-open {
+  width: 18%; }
+
+.sidebar-closed {
+  width: 0%; }
 
 .logo-container {
   flex: 0.7; }
@@ -62,12 +130,13 @@ p {
 .search {
   color: white; }
 
-.icon {
+#icon {
   width: 40px;
   height: 30px;
   background-image: url("./images/menu-icon.png");
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: pointer;
   bottom: 5px;
   position: relative; }
 
@@ -191,40 +260,18 @@ p {
   align-items: center; }
 
 .video {
-  width: 90%;
-  height: 90%;
+  width: 74%;
+  height: 87%;
   box-shadow: 5px 5px 25px -3px rgba(0, 0, 0, 0.6);
   display: flex;
-  flex-direction: column; }
-
-.video-content-one {
-  width: 100%;
-  height: 92%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; }
-  .video-content-one h1 {
-    color: white;
-    font-size: 3.8em;
-    font-weight: bold;
-    padding-top: 15px; }
-  .video-content-one span {
-    color: black; }
-  .video-content-one .empty, .video-content-one h1, .video-content-one i {
-    width: 33%; }
-
-.video-content-two {
-  width: 100%;
-  height: 7%;
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: flex-end; }
-  .video-content-two .youtube {
-    width: 60px;
+  flex-direction: column;
+  overflow: hidden; }
+  .video iframe {
+    position: relative;
+    top: 0;
+    left: 0;
     height: 100%;
-    background-image: url("./images/youtube-logo.png");
-    background-size: cover;
-    background-repeat: no-repeat; }
+    width: 100%; }
 
 .section-five {
   width: 90%;
@@ -296,7 +343,7 @@ p {
   flex-direction: column;
   align-items: center; }
 
-.headphones-black {
+#headphones-select {
   width: 110%;
   height: 100%;
   display: flex;
@@ -419,7 +466,8 @@ p {
 
 .overview-details {
   width: 100%;
-  height: 40%;
+  height: 100%;
+  margin-top: 70px;
   display: flex;
   flex-direction: column;
   justify-content: space-around; }
@@ -432,7 +480,7 @@ p {
     padding: 0px 8px; }
 
 .text-overview {
-  height: 30%;
+  height: 100%;
   padding: 3px;
   display: flex;
   align-items: center;
@@ -440,12 +488,25 @@ p {
   .text-overview span {
     color: #e76a6a;
     font-size: 1.5em;
-    padding-right: 60px; }
+    padding-right: 60px;
+    cursor: pointer; }
 
 #highlights {
+  padding-bottom: 15px;
   border-bottom: 1px solid lightgray; }
 
+.dropdown {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: white;
+  display: block;
+  height: 0%;
+  opacity: 0;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out; }
+
 #specs {
+  padding-bottom: 15px;
   border-bottom: 2px solid white; }
 
 .img-col-2 {
@@ -455,6 +516,9 @@ p {
   background-size: contain;
   background-repeat: no-repeat;
   transform: translate(0%, -26%); }
+
+#buy-now {
+  font-size: 1.5rem; }
 
 @media (min-width: 6.25em) {
   .beats-overlay {

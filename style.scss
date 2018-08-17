@@ -32,6 +32,7 @@ body {
 html, body {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  height: 100%;
 }
 @mixin bg-image($url, $size) {
   background-image: url($url);
@@ -62,13 +63,117 @@ p {
   position: absolute;
   align-items: center;
   justify-content: space-around;
+  .fa-search {
+    cursor: pointer;
+  }
   a {
     color: white;
     font-size: 0.8em;
     letter-spacing: 0.06em;
     text-decoration: none;
+    &:hover {
+      border-bottom: 2px solid #fff;
+    }
+  }
+  input {
+    border: 0.5px solid white;
+    color: #fff;
+    background: #000;
+    border-radius: 10px;
+    margin: 0px 10px;
+    width: 0px;
+    opacity: 0;
+    padding: 4px;
+    cursor: none;
+    &:focus {
+      outline: none;
+    }
+    &::-webkit-input-placeholder {
+      font-style: italic;
+      font-size: 1rem;
+    }
   }
 }
+// =============
+// NAVBAR - ANIMATION CLASSES
+// -------------
+.searchbar-open{
+  animation: revealsearch 1s forwards;
+}
+@keyframes revealsearch {
+  0% {
+    opacity: 0.5;
+    width: 0px;
+  }
+  25% {
+    opacity: 0.6;
+    width: 100px;
+  }
+  75% {
+    width: 120px;
+    opacity: 0.8;
+
+  }
+  100% {
+    width: 190px;
+    opacity: 1;
+  }
+}
+
+// =============
+// NAVBAR - sidebar
+// -------------
+#side-bar {
+  position: fixed;
+  background-color: black;
+  border-left: 2px solid tomato;
+  height: 100%;
+  right: -250px;
+  z-index: 10;
+  h1 {
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 40px 10px 20px 200px;
+  }
+  ul {
+    margin-top: 100px;
+    li {
+      margin: 50px 0px; 
+      padding: 20px;
+      list-style-type: none;
+      color: white;
+      &:hover {
+        background: darkred;
+        cursor: pointer;
+      }
+    }
+    .logo {
+      margin: 0 auto;
+    }
+  }
+}
+// sidebar animation
+.sidebar-open {
+  // @keyframes sidebar {
+  //   0% { width: 0% }
+  //   25% { width: 5% }
+  //   50% { width: 10% }
+  //   100% { width: 18%; }
+  // }
+  width: 18%;
+}
+.sidebar-closed {
+  // @keyframes sidebar {
+  //   0% { width: 18% }
+  //   25% { width: 10% }
+  //   50% { width: 5% }
+  //   100% { width: 0%; }
+  // }
+  width: 0%;
+}
+
 .logo-container {
   flex: 0.7;
 }
@@ -80,10 +185,11 @@ p {
 .search {
   color: white;
 }
-.icon {
+#icon {
   width: 40px;
   height: 30px;
   @include bg-image('./images/menu-icon.png', cover);
+  cursor: pointer;
   
   bottom: 5px;
   position: relative;
@@ -236,44 +342,20 @@ p {
   align-items: center;
 }
 .video {
-  width: 90%;
-  height: 90%;
+  width: 74%;
+  height: 87%;
   box-shadow: 5px 5px 25px -3px rgba(0, 0, 0, 0.6);
 
   display: flex;
   flex-direction: column;
-}
-.video-content-one {
-  width: 100%;
-  height: 92%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  h1 {
-    color: white;
-    font-size: 3.8em;
-    font-weight: bold;
-    padding-top: 15px;
-  }
-  span {
-    color: black;
-  }
-  .empty, h1, i {
-    width: 33%;
-  }
-}
-.video-content-two {
-  width: 100%;
-  height: 7%;
-
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: flex-end;  
-  .youtube {
-    width: 60px;
+  overflow: hidden;
+  iframe {
+    position: relative;
+    top: 0;
+    left: 0;
     height: 100%;
-    @include bg-image('./images/youtube-logo.png', cover);
+    width: 100%;
+    
   }
 }
 
@@ -344,11 +426,13 @@ p {
   flex-direction: column;
   align-items: center;
 }
-.headphones-black {
+#headphones-select {
   width: 110%;
   height: 100%;
   display: flex;
-  @include bg-image('./images/beats-v4.png', cover);
+  background-image: url('./images/beats-v4.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .circle-icons {
   width: 100%;
@@ -493,7 +577,8 @@ p {
 }
 .overview-details {
   width: 100%;
-  height: 40%;
+  height: 100%;
+  margin-top: 70px;
   
   display: flex;
   flex-direction: column;
@@ -510,7 +595,7 @@ p {
   }
 }
 .text-overview {
-  height: 30%;
+  height: 100%;
   padding: 3px;
   display: flex;
   align-items: center;
@@ -519,12 +604,26 @@ p {
     color: lighten(#DD2828, 15%);
     font-size: 1.5em;
     padding-right: 60px;
+    cursor: pointer;
   }
 }
+
 #highlights {
+  padding-bottom: 15px;
   border-bottom: 1px solid lightgray;
 }
+.dropdown {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: white;
+  display: block;
+  height: 0%;
+  opacity: 0;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+}
 #specs {
+  padding-bottom: 15px;
   border-bottom: 2px solid white;
 }
 .img-col-2 {
@@ -533,6 +632,10 @@ p {
   @include bg-image('./images/beats-v1.png', contain);
 
   transform: translate(0%, -26%);
+}
+
+#buy-now {
+  font-size: 1.5rem;
 }
 
 // ================
@@ -571,3 +674,7 @@ p {
     display: none;
   }
 }
+
+// =============
+// Animations
+// -------------
