@@ -305,6 +305,7 @@ p {
   .color-selection .select {
     color: white;
     width: 40%;
+    cursor: pointer;
     display: flex;
     align-items: center; }
     .color-selection .select i {
