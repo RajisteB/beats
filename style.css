@@ -347,7 +347,7 @@ p {
 #headphones-select {
   width: 110%;
   height: 100%;
-  padding-right: 3px;
+  padding-right: 10px;
   display: flex;
   background-image: url("./images/beats-v4.png");
   background-size: cover;
